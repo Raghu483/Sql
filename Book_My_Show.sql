@@ -14,3 +14,20 @@ CREATE TABLE Theatre (
     City_ID INT NOT NULL,
     FOREIGN KEY (City_ID) REFERENCES Show(City)
 );
+CREATE TABLE Movie (
+    Movie_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Movie_Name VARCHAR(255) NOT NULL,
+	Movie_Language VARCHAR(255) NOT NULL,
+	Movie_Type VARCHAR(255) NOT NULL,
+	Movie_Certificate VARCHAR(255) NOT NULL
+);
+CREATE TABLE ScreenS (
+    Screen_ID INT PRIMARY KEY AUTO_INCREMENT,
+	Screen_Name VARCHAR(255) NOT NULL,
+	Seating_Capacity INT NOT NULL,
+    Theatre_ID INT NOT NULL,
+	MOVIE_ID INT NOT NULL,
+	Screen_Name_Avablity DATETIME,
+    FOREIGN KEY (Theatre_ID) REFERENCES Show(Theatre),
+	FOREIGN KEY (MOVIE_ID) REFERENCES Show(Movie),
+);

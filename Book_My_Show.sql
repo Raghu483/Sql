@@ -21,13 +21,20 @@ CREATE TABLE Movie (
 	Movie_Type VARCHAR(255) NOT NULL,
 	Movie_Certificate VARCHAR(255) NOT NULL
 );
-CREATE TABLE ScreenS (
+CREATE TABLE Screen (
     Screen_ID INT PRIMARY KEY AUTO_INCREMENT,
 	Screen_Name VARCHAR(255) NOT NULL,
 	Seating_Capacity INT NOT NULL,
     Theatre_ID INT NOT NULL,
 	MOVIE_ID INT NOT NULL,
-	Screen_Name_Avablity DATETIME,
+	Screen_Avablity DATETIME,
     FOREIGN KEY (Theatre_ID) REFERENCES Show(Theatre),
-	FOREIGN KEY (MOVIE_ID) REFERENCES Show(Movie),
+	FOREIGN KEY (MOVIE_ID) REFERENCES Show(Movie)
+);
+CREATE TABLE Screen_Seat (
+    Screen_Seat_ID INT PRIMARY KEY AUTO_INCREMENT,
+	Seat_Name VARCHAR(255) NOT NULL,
+	Seating_Booked VARCHAR(255) NOT NULL,
+    Screen_ID INT NOT NULL,
+	FOREIGN KEY (Screen_ID) REFERENCES Show(Screen)
 );

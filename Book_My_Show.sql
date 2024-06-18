@@ -47,10 +47,10 @@ CREATE TABLE Screen (
 	FOREIGN KEY (MOVIE_ID) REFERENCES Show(Movie)
 );
 
-INSERT INTO Screen VALUES (100,"Screen Name 1",200,100,"");
-INSERT INTO Screen VALUES (101,"Screen Name 2",201,100,"");
-INSERT INTO Screen VALUES (102,"Screen Name 1",200,101,"");
-INSERT INTO Screen VALUES (103,"Screen Name 2",202,101,"");
+INSERT INTO Screen VALUES (100,"Screen Name 1",200,100,100,now());
+INSERT INTO Screen VALUES (101,"Screen Name 2",201,100,100,now());
+INSERT INTO Screen VALUES (102,"Screen Name 1",200,101,100,now());
+INSERT INTO Screen VALUES (103,"Screen Name 2",202,101,101,now());
 
 CREATE TABLE Screen_Seat (
     Screen_Seat_ID INT PRIMARY KEY AUTO_INCREMENT,

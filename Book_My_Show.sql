@@ -77,3 +77,5 @@ INSERT INTO Screen_Seat VALUES (112,"A5",0,103);
 INSERT INTO Screen_Seat VALUES (113,"A6",0,103);
 INSERT INTO Screen_Seat VALUES (114,"A7",0,103);
 INSERT INTO Screen_Seat VALUES (115,"A8",0,103);
+
+SELECT * FROM Screen sn inner join on Movie mo where Theatre_ID = 101

@@ -1,0 +1,1 @@
+SELECT mo.MOVIE_ID ,mo.Movie_Name, sn.Screen_Name, sn.Screen_Avablity FROM Screen sn inner join  Movie mo on sn.MOVIE_ID = mo.Movie_ID  where Theatre_ID = 101
